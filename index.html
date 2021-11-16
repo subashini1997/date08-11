@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var player="x";
+        var board =document.createElement("div");
+        board.style.width="300px";
+        board.style.display="flex";
+        board.style.flexDirection="row";
+        board.style.flexWrap="wrap";
+        board.style.marginTop="300px";
+        board.style.marginLeft="800px";
+
+      for(let i=1;i<=9;i++){
+          var box=document.createElement("div");
+          box.style.height="100px";
+          box.style.width="32%";
+          box.setAttribute("id",i)
+          box.style.border="1px solid blue";
+          box.style.backgroundColor="pink";
+          box.style.textAlign="center"
+          box.addEventListener('click',function(){
+              if(this.innerText.length == 0){
+                  if(player == "x"){
+                      this.innerText = player;
+                      player = "o";
+
+                  }else{
+                      this.innerText= player;
+                      player ="x";
+
+                  }
+              }
+          })
+          board.appendChild(box);
+      }  document.body.appendChild(board)
+    </script>
+
+        
+     </body>
+</html>
